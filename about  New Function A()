@@ -1,0 +1,13 @@
+###这里记录下new一个实例时（new functionA(arguments...)）发生了什么?[分三步]
+#1.创建类的实例。这一步是把一个空的对象的__proto__属性设为F.prototype.
+#2.初始化实例。函数A传入参数并调用,关键字this被设定为该实例。
+#3.返回实例。
+
+##现在知道了new是怎么工作的，接下来用js实现该步骤
+#function New（A）{
+    var  obj = {'__proto__':A.prototype};
+    return funtion(){
+        a.apply(A,arguments);
+        return obj;
+    } 
+}
